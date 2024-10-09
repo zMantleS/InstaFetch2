@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #FF76E9, #FFB55E);
+    height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------------------------*/
+/*-- Flex Container --*/
+/*---------------------------------------------------------------------------*/
+.container {
+    background-color: #FFFFFF;
+    margin: 30px 30px 0px 30px;
+    border-radius: 30px 30px 30px 30px;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------------------------------------------------------------------*/
+/*-- Header --*/
+/*---------------------------------------------------------------------------*/
+.header {
+    padding: 8px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.navbar a:link {
+    color: #247AFD;
+}
+
+.navbar a:visited {
+    color: #247AFD;
+}
+
+.navbar a:hover {
+    color: #FF76E9;
+}
+
+/*-- Logo and Logo Text --*/
+.logo-box {
+    display: flex;
+    flex-direction: row;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.logo {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+}
+
+.logo-text {
+    align-self: center;
+    font-size: 38px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/*-- Nav Links --*/
+.nav-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.nav-links {
+    align-self: center;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*---------------------------------------------------------------------------*/
+/*-- Content --*/
+/*---------------------------------------------------------------------------*/
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+/*-- Search Section --*/
+.search-box {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 75px;
+    margin-top: 60px;
+}
+
+.content-header {
+    color: #247AFD;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.content-tagline {
+    color: #247AFD;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.form-input input {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #3B4045;
+    border-right: none;
+    float: left;
+    width: 60%;
+}
+
+.user-symbol {
+    float: left;
+    width: 5%;
+    padding: 6.5px;
+    background: #747474;
+    color: white;
+    font-size: 22px;
+    border: 1px solid #3B4045;
+    border-radius: 25px 0px 0px 25px;
+    border-right: none;
+    cursor: not-allowed;
+}
+
+.search-button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #FFB55E;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #3B4045;
+    border-radius: 0px 25px 25px 0px;
+    border-left: none;
+    cursor: pointer;
+}
+
+/*-- ads section --*/
+.ads-box {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-space {
+    height: 526px;
+    width: 840px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+}
+
+/*---------------------------------------------------------------------------*/
+/*-- Footer --*/
+/*---------------------------------------------------------------------------*/
+.footer {
+    flex-shrink: 0;
+    height: 100px;
+    background-color: #3B4045;
+    color: #FFFFFF;
+}
+
+.footer a:link,
+a:visited {
+    color: #FFFFFF;
+}
+
+.footer a:hover {
+    color: #FF76E9;
+}
+
+.footer a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: row;
+    margin-left: 60px;
+    height: 100px;
+}
+
+.footer-box p {
+    align-self: center;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-box a {
+    align-self: center;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}

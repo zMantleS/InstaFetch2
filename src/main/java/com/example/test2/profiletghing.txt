@@ -1,0 +1,31 @@
+public String profile(@RequestParam("username") String name, Model model, RestTemplate restTemplate) throws JsonProcessingException {
+        final String url = "https://instagram-profile1.p.rapidapi.com/getprofile/"+name;
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("X-RapidAPI-Key", "219053b9eamsh28a351353532d9bp1fd6d4jsnaf0717c4471e");
+        headers.add("X-RapidAPI-Host", "instagram-profile1.p.rapidapi.com");
+
+        HttpEntity<String> httpEntity = new HttpEntity<>(headers);
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class);
+
+        String jsString = response.getBody();
+        //JsonNode root = response.getBody();
+        //JsonNode nestedObj1 = root.get("lastMedia");
+        //JsonNode nestedObj2 = root.get("lastVideo");
+
+
+        ObjectMapper objectMapper =  new ObjectMapper();
+
+        JsonNode root = objectMapper.readTree(jsString);
+
+        ObjectNode objectNode = (ObjectNode) root;
+        objectNode.remove("lastVideo");
+
+        String updJs = objectMapper.writeValueAsString(root);
+        System.out.println(updJs);
+
+
+        Profile profile = objectMapper.readValue(updJs, Profile.class);
+        //profile.setStatus(response.getStatusCode().toString());
+
+        model.addAttribute("profile", profile);
+        return "profile";

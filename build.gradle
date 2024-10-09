@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.12'
+	id 'io.spring.dependency-management' version '1.1.0'
+	id 'war'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.15.1'
+	implementation 'org.apache.logging.log4j:log4j:2.6.1'
+	runtimeOnly 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.69' // jsps
+	runtimeOnly 'javax.servlet:jstl:1.2' // helpful JSP tags
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
